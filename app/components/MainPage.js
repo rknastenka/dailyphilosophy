@@ -13,6 +13,8 @@ export default function MainPage() {
 
   const [answerText, setAnswerText] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [timeRemaining, setTimeRemaining] = useState('');
+  const [isQuestionClosed, setIsQuestionClosed] = useState(false);
 
   // Questions data
   const questions = [
@@ -65,6 +67,43 @@ export default function MainPage() {
     return questions[questionIndex];
   };
 
+  const getQuestionPublishTime = () => {
+    // Question is published at midnight of the current day
+    const today = new Date();
+    const publishTime = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 0, 0, 0, 0);
+    return publishTime;
+  };
+
+  useEffect(() => {
+    const calculateTimeRemaining = () => {
+      const publishTime = getQuestionPublishTime();
+      const closeTime = new Date(publishTime.getTime() + 24 * 60 * 60 * 1000); // 24 hours later
+      const now = new Date();
+      const diff = closeTime - now;
+
+      if (diff <= 0) {
+        setIsQuestionClosed(true);
+        return 'Closed';
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      return `${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    // Initial calculation
+    setTimeRemaining(calculateTimeRemaining());
+
+    // Update countdown every second
+    const interval = setInterval(() => {
+      setTimeRemaining(calculateTimeRemaining());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const formatTimeAgo = (hoursAgo) => {
     if (hoursAgo === 1) return '1 hour ago';
     if (hoursAgo < 1) return 'Just now';
@@ -75,6 +114,11 @@ export default function MainPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    if (isQuestionClosed) {
+      showError("This question is now closed. Come back tomorrow for a new question.");
+      return;
+    }
     
     if (appState.hasAnsweredToday) {
       showError("You've already shared your reflection today. Come back tomorrow for a new question.");
@@ -113,14 +157,20 @@ export default function MainPage() {
 
       <main className="main-content">
         <>
-            <div className="date">Question #{todaysQuestion.id} • {formatShortDate(new Date())}</div>
+            <div className="date">
+              Question #{todaysQuestion.id} • {formatShortDate(new Date())} • {timeRemaining}
+            </div>
 
             <section className="question-section">
 
               <h1 className="question">{todaysQuestion.question}</h1>
             </section>
 
-            {!appState.hasAnsweredToday ? (
+            {isQuestionClosed ? (
+              <section className="question-closed-note">
+                <p>This question is now closed. A new question will be available tomorrow.</p>
+              </section>
+            ) : !appState.hasAnsweredToday ? (
               <section className="answer-section">
                 <form onSubmit={handleSubmit}>
                   <div className="form-group">
