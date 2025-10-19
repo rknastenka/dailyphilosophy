@@ -14,8 +14,11 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Daily Question - A Space for Reflection",
+  title: "Daily Philosophy",
   description: "A minimalist platform designed to encourage critical thinking and self-reflection through thoughtful dialogue.",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({ children }) {
