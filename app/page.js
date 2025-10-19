@@ -1,7 +1,7 @@
 'use client';
 
-import DailyQuestionApp from './components/DailyQuestionApp';
+import MainPage from './components/MainPage';
 
 export default function Home() {
-  return <DailyQuestionApp />;
+  return <MainPage />;
 }

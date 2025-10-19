@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import '../components/DailyQuestionApp.css';
+import '../components/MainPage.css';
 
 export default function ArchivePage() {
   const [selectedQuestion, setSelectedQuestion] = useState(null);

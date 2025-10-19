@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './DailyQuestionApp.css';
+import './MainPage.css';
 
-export default function DailyQuestionApp() {
+export default function MainPage() {
   const [appState, setAppState] = useState({
     hasAnsweredToday: false,
     userAnswer: null,
