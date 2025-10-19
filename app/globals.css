@@ -619,6 +619,15 @@ body {
   .textarea {
     min-height: 100px;
   }
+
+  .answer-section form {
+    align-items: center;
+  }
+
+  .submit-btn {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 @media (min-width: 768px) {
