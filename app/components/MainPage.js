@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import './MainPage.css';
 
 export default function MainPage() {
   const [appState, setAppState] = useState({
