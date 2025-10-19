@@ -16,16 +16,16 @@ export default function MainPage() {
 
   // Questions data
   const questions = [
-    { id: 1, category: "Existence and Identity", question: "Who would you be if you lost all your memories?" },
-    { id: 2, category: "Existence and Identity", question: "Is the person you were ten years ago the same person you are today?" },
-    { id: 3, category: "Morality and Ethics", question: "Is it better to be kind or to be honest when the two conflict?" },
-    { id: 4, category: "Morality and Ethics", question: "Can a good action done for selfish reasons still be considered moral?" },
-    { id: 5, category: "Meaning and Purpose", question: "If life has no inherent meaning, does that free you or terrify you?" },
-    { id: 6, category: "Meaning and Purpose", question: "What would you do differently if you knew today was your last day?" },
-    { id: 7, category: "Knowledge and Truth", question: "Is it better to live in a comforting lie or a harsh truth?" },
-    { id: 8, category: "Love and Connection", question: "Can you truly love someone without wanting to change them?" },
-    { id: 9, category: "Freedom and Control", question: "Would you give up freedom for guaranteed safety and comfort?" },
-    { id: 10, category: "Society and Individuality", question: "Should you prioritize your own happiness or your responsibility to others?" }
+    { id: 1, question: "Who would you be if you lost all your memories?" },
+    { id: 2, question: "Is the person you were ten years ago the same person you are today?" },
+    { id: 3, question: "Is it better to be kind or to be honest when the two conflict?" },
+    { id: 4, question: "Can a good action done for selfish reasons still be considered moral?" },
+    { id: 5, question: "If life has no inherent meaning, does that free you or terrify you?" },
+    { id: 6, question: "What would you do differently if you knew today was your last day?" },
+    { id: 7, question: "Is it better to live in a comforting lie or a harsh truth?" },
+    { id: 8, question: "Can you truly love someone without wanting to change them?" },
+    { id: 9, question: "Would you give up freedom for guaranteed safety and comfort?" },
+    { id: 10, question: "Should you prioritize your own happiness or your responsibility to others?" }
   ];
 
   // Sample responses
