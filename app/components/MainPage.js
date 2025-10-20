@@ -32,14 +32,14 @@ export default function MainPage() {
 
   // Sample responses
   const sampleResponses = [
-    { author: "Reflection #1", text: "I think about this often. Memories shape us, but I believe there's something deeper—a core essence that transcends experience. Even without memories, the patterns of how we think and feel might remain. Or maybe we'd become entirely new, shaped only by present moments. Both possibilities are equally beautiful and terrifying.", hoursAgo: 8 },
-    { author: "Anonymous Thinker 7", text: "Without memories, you'd be a blank slate. All our fears, joys, preferences—they come from what we've experienced. You wouldn't be 'you' anymore. You'd be potential waiting to be filled.", hoursAgo: 5 },
-    { author: "Reflection #14", text: "This reminds me of my grandmother who had Alzheimer's. She forgot names, faces, entire decades. But her kindness remained. Her humor remained. Maybe we're not just our memories—maybe we're the emotional patterns that run deeper than recall.", hoursAgo: 6 },
-    { author: "Anonymous Thinker 22", text: "I'd be nobody. Identity IS memory. Take away the story of where you've been and you have no compass for where you're going. We're all just the sum of our experiences, continuously rewriting our own narrative.", hoursAgo: 3 },
-    { author: "Reflection #31", text: "Perhaps the question isn't who you'd BE, but who you'd BECOME. Without the weight of past mistakes or achievements, you might finally be free to discover who you were meant to be all along.", hoursAgo: 7 },
-    { author: "Anonymous Thinker 45", text: "My values would remain, I think. The way I treat people, what makes me laugh, what moves me to tears. Memories are just data. Character is deeper.", hoursAgo: 2 },
-    { author: "Reflection #52", text: "I don't know, and that uncertainty is what makes this question so powerful. It forces us to ask: what makes us US? Is it continuity of experience, or something more fundamental? I'm not sure there's a right answer.", hoursAgo: 4 },
-    { author: "Anonymous Thinker 68", text: "We forget most of our childhood, yet we're still shaped by it. We lose memories as we age, but we remain ourselves. So maybe losing ALL memories would be different only in degree, not in kind. We'd still be human. We'd still be someone.", hoursAgo: 1 }
+    { author: "@banayaus", text: "I think about this often. Memories shape us, but I believe there's something deeper—a core essence that transcends experience. Even without memories, the patterns of how we think and feel might remain. Or maybe we'd become entirely new, shaped only by present moments. Both possibilities are equally beautiful and terrifying.", hoursAgo: 8 },
+    { author: "@thoughtseeker", text: "Without memories, you'd be a blank slate. All our fears, joys, preferences—they come from what we've experienced. You wouldn't be 'you' anymore. You'd be potential waiting to be filled.", hoursAgo: 5 },
+    { author: "@mindfulone", text: "This reminds me of my grandmother who had Alzheimer's. She forgot names, faces, entire decades. But her kindness remained. Her humor remained. Maybe we're not just our memories—maybe we're the emotional patterns that run deeper than recall.", hoursAgo: 6 },
+    { author: "@deepreflection", text: "I'd be nobody. Identity IS memory. Take away the story of where you've been and you have no compass for where you're going. We're all just the sum of our experiences, continuously rewriting our own narrative.", hoursAgo: 3 },
+    { author: "@philosophygeek", text: "Perhaps the question isn't who you'd BE, but who you'd BECOME. Without the weight of past mistakes or achievements, you might finally be free to discover who you were meant to be all along.", hoursAgo: 7 },
+    { author: "@quietobserver", text: "My values would remain, I think. The way I treat people, what makes me laugh, what moves me to tears. Memories are just data. Character is deeper.", hoursAgo: 2 },
+    { author: "@wanderingmind", text: "I don't know, and that uncertainty is what makes this question so powerful. It forces us to ask: what makes us US? Is it continuity of experience, or something more fundamental? I'm not sure there's a right answer.", hoursAgo: 4 },
+    { author: "@existentialcat", text: "We forget most of our childhood, yet we're still shaped by it. We lose memories as we age, but we remain ourselves. So maybe losing ALL memories would be different only in degree, not in kind. We'd still be human. We'd still be someone.", hoursAgo: 1 }
   ];
 
   // Utility functions
