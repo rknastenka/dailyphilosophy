@@ -20,7 +20,7 @@ export default function LoginPage() {
       <Header />
 
       <main className="main-content">
-        <div style={{ maxWidth: '400px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '400px', margin: '0 auto', width: '100%' }}>
           <h1 style={{ fontFamily: 'var(--font-lora), Georgia, serif', fontSize: '2.5rem', marginBottom: '3rem', color: 'var(--primary-text)', textAlign: 'center' }}>
             Login
           </h1>
@@ -63,7 +63,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <p style={{ textAlign: 'center', marginTop: '1.5rem', color: 'var(--secondary-text)', fontSize: '0.9rem' }}>
+          <p style={{fontFamily: "Times New Roman, Georgia, serif", textAlign: 'center', marginTop: '1.5rem', color: 'var(--secondary-text)', fontSize: '0.9rem' }}>
             Don&apos;t have an account?{' '}
             <Link href="/signup" style={{ color: 'var(--accent)', textDecoration: 'none' }}>
               Sign up
@@ -72,11 +72,7 @@ export default function LoginPage() {
         </div>
       </main>
 
-      <footer className="footer">
-        <Link href="/about" className="archive-link">About</Link>
-        <span className="footer-separator"> • </span>
-        <Link href="/archive" className="archive-link">Archive</Link>
-      </footer>
+
     </div>
   );
 }
