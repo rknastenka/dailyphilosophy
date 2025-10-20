@@ -23,11 +23,11 @@ export default function ArchivePage() {
 
   const archivedResponses = {
     2: [
-      { author: "@deepthoughts", text: "Physically, no. Mentally, barely. But the thread of consciousness connecting us feels real. I'm both that person and someone entirely new." },
-      { author: "@riverofchange", text: "We're like rivers. Same name, same path, but the water is always different. You're not the same person, but you're the continuation of who you were." },
-      { author: "@evolvedmind", text: "I've changed my beliefs, my values, my entire worldview. The only thing connecting me to my past self is memory. Are we the same? I don't think so." },
-      { author: "@continuumseeker", text: "Every cell in my body has been replaced since then, but something essential remains. Maybe it's not about being the same—it's about being continuous." },
-      { author: "@transformedself", text: "I look at old photos and feel like I'm looking at a stranger who happened to share my name. Growth isn't just change—it's transformation." }
+      { author: "@deepthoughts", text: "Physically, no. Mentally, barely. But the thread of consciousness connecting us feels real. I'm both that person and someone entirely new.", votes: 12 },
+      { author: "@riverofchange", text: "We're like rivers. Same name, same path, but the water is always different. You're not the same person, but you're the continuation of who you were.", votes: 8 },
+      { author: "@evolvedmind", text: "I've changed my beliefs, my values, my entire worldview. The only thing connecting me to my past self is memory. Are we the same? I don't think so.", votes: 5 },
+      { author: "@continuumseeker", text: "Every cell in my body has been replaced since then, but something essential remains. Maybe it's not about being the same—it's about being continuous.", votes: 15 },
+      { author: "@transformedself", text: "I look at old photos and feel like I'm looking at a stranger who happened to share my name. Growth isn't just change—it's transformation.", votes: 3 }
     ]
   };
 
@@ -88,7 +88,43 @@ export default function ArchivePage() {
               <div className="responses-grid">
                 {(archivedResponses[selectedQuestion.id] || []).map((response, idx) => (
                   <div key={idx} className="response-card">
-                    <div className="response-author">{response.author}</div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                      <div className="response-author">{response.author}</div>
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                        <button 
+                          style={{ 
+                            background: 'none', 
+                            border: 'none', 
+                            cursor: 'pointer', 
+                            fontSize: '0.85rem',
+                            color: 'var(--accent)',
+                            transition: 'var(--transition)',
+                            padding: '0.25rem'
+                          }}
+                          onMouseEnter={(e) => e.target.style.color = '#7a8c74'}
+                          onMouseLeave={(e) => e.target.style.color = 'var(--accent)'}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          ↑
+                        </button>
+                        <button 
+                          style={{ 
+                            background: 'none', 
+                            border: 'none', 
+                            cursor: 'pointer', 
+                            fontSize: '0.85rem',
+                            color: 'var(--accent)',
+                            transition: 'var(--transition)',
+                            padding: '0.25rem'
+                          }}
+                          onMouseEnter={(e) => e.target.style.color = '#7a8c74'}
+                          onMouseLeave={(e) => e.target.style.color = 'var(--accent)'}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          ↓
+                        </button>
+                      </div>
+                    </div>
                     <div className="response-text">{response.text}</div>
                   </div>
                 ))}
