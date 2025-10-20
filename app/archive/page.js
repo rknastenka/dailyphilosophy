@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import '../components/MainPage.css';
+import Header from '../components/Header';
 
 export default function ArchivePage() {
   const [selectedQuestion, setSelectedQuestion] = useState(null);
@@ -53,9 +53,7 @@ export default function ArchivePage() {
 
   return (
     <div className="container">
-      <header className="header">
-        <Link href="/" className="logo">DAILY PHILOSOPHY</Link>
-      </header>
+      <Header />
 
       <main className="main-content">
         {!selectedQuestion ? (
@@ -100,6 +98,7 @@ export default function ArchivePage() {
           </section>
         )}
       </main>
+
     </div>
   );
 }

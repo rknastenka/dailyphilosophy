@@ -565,7 +565,13 @@ body {
 .footer {
   text-align: center;
   font-family: "Times New Roman", "Georgia", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
 }
+
+
 
 .archive-link {
   color: var(--secondary-text);

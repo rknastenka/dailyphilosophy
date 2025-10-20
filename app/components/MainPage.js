@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Header from './Header';
 
 export default function MainPage() {
   const [appState, setAppState] = useState({
@@ -150,9 +151,7 @@ export default function MainPage() {
 
   return (
     <div className="container">
-      <header className="header">
-        <Link href="/" className="logo">DAILY PHILOSOPHY</Link>
-      </header>
+      <Header />
 
       <main className="main-content">
         <>
@@ -224,7 +223,9 @@ export default function MainPage() {
       </main>
 
       <footer className="footer">
-        <Link href="/archive" className="archive-link">View Archive</Link>
+        <Link href="/about" className="archive-link">About</Link>
+
+        <Link href="/archive" className="archive-link">Archive</Link>
       </footer>
     </div>
   );
