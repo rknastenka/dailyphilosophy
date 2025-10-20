@@ -17,7 +17,7 @@ export default function AboutPage() {
           
           <div style={{ textAlign: 'left', lineHeight: '1.8', color: 'var(--primary-text)' }}>
             <p style={{ marginBottom: '1.5rem', fontSize: '1.05rem' }}>
-            Recent research has shown how AI affects the human brain, and lessen its bare minimum capabilities. Daily Philosophy is a minimal platform built to encourage people to use their own minds and express their thoughts, with no AI-assistance allowed.
+            Recent research has shown how AI affects the human brain and lessen its bare minimum capabilities. Daily Philosophy is a minimal platform built to encourage people to use their own minds and express their thoughts, with no AI-assistance allowed.
             </p>
             <p style={{ marginBottom: '2rem', fontSize: '1.05rem' }}>
               Each day at midnight, we present one carefully curated philosophical question. You have 24 hours to reflect and share your thoughts. You must write your own perspective before you can read what others have shared. This simple requirement creates a barrier against passive consumption and demands genuine engagement.
@@ -45,7 +45,6 @@ export default function AboutPage() {
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--secondary-text)', textDecoration: 'none', fontSize: '0.76rem', transition: 'var(--transition)' }}
-              onMouseEnter={(e) => e.target.style.color = 'var(--accent)'}
               onMouseLeave={(e) => e.target.style.color = 'var(--secondary-text)'}
             >
               @rknastenka

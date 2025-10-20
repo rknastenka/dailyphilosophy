@@ -306,7 +306,6 @@ body {
 .response-text {
   color: var(--primary-text);
   line-height: 1.7;
-  margin-bottom: var(--space-md);
 }
 
 .response-time {

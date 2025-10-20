@@ -23,11 +23,11 @@ export default function ArchivePage() {
 
   const archivedResponses = {
     2: [
-      { author: "@deepthoughts", text: "Physically, no. Mentally, barely. But the thread of consciousness connecting us feels real. I'm both that person and someone entirely new.", hoursAgo: 18 },
-      { author: "@riverofchange", text: "We're like rivers. Same name, same path, but the water is always different. You're not the same person, but you're the continuation of who you were.", hoursAgo: 15 },
-      { author: "@evolvedmind", text: "I've changed my beliefs, my values, my entire worldview. The only thing connecting me to my past self is memory. Are we the same? I don't think so.", hoursAgo: 20 },
-      { author: "@continuumseeker", text: "Every cell in my body has been replaced since then, but something essential remains. Maybe it's not about being the same—it's about being continuous.", hoursAgo: 12 },
-      { author: "@transformedself", text: "I look at old photos and feel like I'm looking at a stranger who happened to share my name. Growth isn't just change—it's transformation.", hoursAgo: 9 }
+      { author: "@deepthoughts", text: "Physically, no. Mentally, barely. But the thread of consciousness connecting us feels real. I'm both that person and someone entirely new." },
+      { author: "@riverofchange", text: "We're like rivers. Same name, same path, but the water is always different. You're not the same person, but you're the continuation of who you were." },
+      { author: "@evolvedmind", text: "I've changed my beliefs, my values, my entire worldview. The only thing connecting me to my past self is memory. Are we the same? I don't think so." },
+      { author: "@continuumseeker", text: "Every cell in my body has been replaced since then, but something essential remains. Maybe it's not about being the same—it's about being continuous." },
+      { author: "@transformedself", text: "I look at old photos and feel like I'm looking at a stranger who happened to share my name. Growth isn't just change—it's transformation." }
     ]
   };
 
@@ -90,7 +90,6 @@ export default function ArchivePage() {
                   <div key={idx} className="response-card">
                     <div className="response-author">{response.author}</div>
                     <div className="response-text">{response.text}</div>
-                    <div className="response-time">{formatTimeAgo(response.hoursAgo)}</div>
                   </div>
                 ))}
               </div>
