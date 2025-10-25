@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Header from '../components/Header';
-import '../components/MainPage.css';
+
 
 export default function AboutPage() {
   return (
