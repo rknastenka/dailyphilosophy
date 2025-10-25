@@ -33,6 +33,14 @@ export default function ArchivePage() {
 
   const formatArchiveDate = (dateString) => {
     const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+    const year = date.getFullYear();
+    return { day, month, year };
+  };
+
+  const formatArchiveDateString = (dateString) => {
+    const date = new Date(dateString);
     const options = { year: 'numeric', month: 'short', day: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
@@ -59,22 +67,25 @@ export default function ArchivePage() {
         {!selectedQuestion ? (
           <section className="archive-section">
             <div className="archive-header">
-              <h2 className="archive-title">Question Archive</h2>
+              <h2 className="archive-title">Archive</h2>
             </div>
-            <div className="archive-grid">
-              {archivedQuestions.map((question) => (
-                <div 
-                  key={question.id} 
-                  className="archive-card"
-                  onClick={() => showQuestionDetail(question)}
-                >
-                  <div className="archive-card-question">{question.question}</div>
-                  <div className="archive-card-meta">
-                    <span className="archive-card-number">#{question.id}</span>
-                    <span className="archive-card-date-meta">{formatArchiveDate(question.date)}</span>
+            <div className="archive-list">
+              {archivedQuestions.map((question) => {
+                const dateObj = formatArchiveDate(question.date);
+                return (
+                  <div 
+                    key={question.id} 
+                    className="archive-item"
+                    onClick={() => showQuestionDetail(question)}
+                  >
+                    <div className="archive-item-date">
+                      <div className="archive-item-date-day">{dateObj.day}</div>
+                      <div className="archive-item-date-month">{dateObj.month} {dateObj.year}</div>
+                    </div>
+                    <div className="archive-item-question">{question.question}</div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </section>
         ) : (
@@ -82,7 +93,7 @@ export default function ArchivePage() {
             <a className="back-button" onClick={(e) => { e.preventDefault(); showArchive(); }}>Back to Archive</a>
             <div className="question-detail-header">
               <h1 className="question-detail-text">{selectedQuestion.question}</h1>
-              <div className="question-detail-date">Question #{selectedQuestion.id} • {formatArchiveDate(selectedQuestion.date)}</div>
+              <div className="question-detail-date">Question #{selectedQuestion.id} • {formatArchiveDateString(selectedQuestion.date)}</div>
             </div>
             <div className="responses-section">
               <div className="responses-grid">

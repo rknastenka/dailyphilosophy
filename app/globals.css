@@ -400,78 +400,83 @@ body {
 /* Archive Styles */
 .archive-section {
   animation: fadeIn 0.8s ease-out;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .archive-header {
-  text-align: center;
+  text-align: left;
+  margin-bottom: var(--space-2xl);
+  border-bottom: 2px solid var(--primary-text);
+  padding-bottom: var(--space-sm);
 }
 
 .archive-title {
   font-family: var(--font-lora), 'Georgia', serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--primary-text);
-  margin-bottom: var(--space-md);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
 }
 
-.archive-grid {
-  column-count: 1;
-  column-gap: var(--space-md);
-  margin-bottom: var(--space-2xl);
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
 }
 
-.archive-card {
-  background-color: var(--white);
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid var(--light-gray);
+.archive-item {
   cursor: pointer;
   transition: var(--transition);
   position: relative;
-  break-inside: avoid;
-  margin-bottom: var(--space-md);
-  display: inline-block;
-  width: 100%;
 }
 
-.archive-card:hover {
-  border-color: rgba(139, 157, 131, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  background-color: #fafafa;
-}
-
-.archive-card-date {
+.archive-item:hover .archive-item-date-day {
   color: var(--accent);
-  font-size: 0.85rem;
-  font-weight: 500;
+  transform: scale(1.05);
+}
+
+.archive-item:hover .archive-item-question {
+  color: var(--primary-text);
+}
+
+.archive-item-date {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-md);
   margin-bottom: var(--space-xs);
 }
 
-.archive-card-question {
+.archive-item-date-day {
   font-family: var(--font-lora), 'Georgia', serif;
-  font-size: 1.2rem;
+  font-size: 3rem;
   color: var(--primary-text);
-  margin-bottom: var(--space-sm);
-  line-height: 1.4;
-}
-
-.archive-card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--accent);
-  font-size: 0.75rem;
-  margin-top: var(--space-lg);
-  font-family: "Times New Roman", "Georgia", serif;
   font-weight: 300;
-  letter-spacing: 0.05em;
+  line-height: 1;
+  transition: var(--transition);
+  letter-spacing: -0.02em;
 }
 
-.archive-card-number {
-  color: var(--accent);
+.archive-item-date-month {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--secondary-text);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding-top: 0.5rem;
 }
 
-.archive-card-date-meta {
-  color: var(--accent);
+.archive-item-question {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  transition: var(--transition);
+  font-weight: 300;
+  padding-left: 0;
 }
 
 /* Question Detail View */
@@ -632,10 +637,24 @@ body {
     width: 100%;
     max-width: 300px;
   }
+
+  .archive-item {
+    gap: var(--space-md);
+  }
+
+  .archive-item-date-day {
+    font-size: 2.5rem;
+  }
+
+  .archive-item-date-month {
+    font-size: 0.7rem;
+  }
+
+  .archive-item-question {
+    font-size: 0.9rem;
+  }
 }
 
 @media (min-width: 768px) {
-  .archive-grid {
-    column-count: 3;
-  }
+  
 }
