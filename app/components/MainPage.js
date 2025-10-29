@@ -226,6 +226,8 @@ export default function MainPage() {
         <Link href="/about" className="archive-link">About</Link>
 
         <Link href="/archive" className="archive-link">Archive</Link>
+
+        <Link href="/account" className="archive-link">Account</Link>
       </footer>
     </div>
   );
